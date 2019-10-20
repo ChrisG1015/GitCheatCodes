@@ -1,0 +1,89 @@
+ls .git/ --- SHOWS YOU HIDDEN FOLDER CONTENTS
+
+COMMIT_EDITMSG ---> List of commits
+HEAD ----> refernce to current branch we are working
+confing ---> configuration info about repository : username/email
+description ---> used by gitweb
+hooks ----> contains scripts that you can create to set up automated task
+index --> keeps track of items in staging area
+info ---> exclude file that git will ignore kinda like gitignore
+logs ---> log files for activity that goes on within repositoruy
+objects ---> actually a db : hashed vesion of files comitted to repostiroy 
+refs ---> refernce files and fodlers fo rbranches and tags for itmes in repository
+
+
+----------------------------------------------------------------------------------------------------
+
+GIT INIT GITINIT GITCONFIG GIT CONFIG 
+
+Creating a git repository is called initialization.... git init
+git init command creates a new repository 
+ls -a <repositoryname>/.git :::: shows all files
+
+
+git init --bare :::: initializes a bare git repository for LARGER PROJECTS. CONTAINS NO WORKING AREA
+AND OTHER CONTRIBUTORS ARE GOING TO DO PUSHES AND PULLS... USEFUL FOR BRANCHES 
+
+configure various elements of your git 
+git config --global user.name "kenny armstrong"
+git config --golbal user.email "kenny@Getthismoneyl.com"
+git config --list::: lists out configs made
+man git-config
+git config --global core.editor "/urs/bin/vim"
+cat ~/.gitconfig ::: shows all config options we just set up 
+
+git add ::: add to project
+git status ::: see what files are in the staging area ---can shows whats waiting to be committed
+touch src/.keep ::: whole file gets TOUCHED
+git add src/.keep :::: adds the ENTIRE DIRECTORY
+git status -s ::: view output in shortened cleaned format
+git commit -m "yo we added the new templates" 
+git commit -a -m "message" commit a modifired file in the staging area 
+man git-commit  :::: tells you all things git
+.gitignore :::: ignore file local to a git repository commonly used to exlcude files based on certain patterns
+echo "build/*" >> .gitignore :::: it wont track the build directory
+
+
+TAGGING PROJECT TAG GIT GIT TAG TAG:: tagging commits in git 
+git tag -a v0.1 -m "first tag for the project" :::: done INSIDE THE REPOSITORY FOLDER to tag it
+git tag :::: outputs tag
+git show v0.1 :: shows commits for the projects , messages for commits and changes for commited files
+git tag -d v0.1 --- deletes tag 
+
+git branches using branches
+git branch <branch name>
+GITCHEAT:
+git log --oneline --decorate ::prints the git log with all commits listed one line out of time
+git checkout <branch name> :::work from that branch 
+
+
+MERGING BRANCH MERGE GITMERGE
+GITCHEAT:
+cat .git/HEAD :::shows last branch you were on 
+cat .git/refs/heads/master shows SHA ,,follow first 7 numbers
+ 
+git merge <branchname> :: always merge from inside the master branch , pull them to you 
+merge conflict? run git-status 
+you can abort ::: or fix the issue
+if you fix the issue
+you have to AC -M or P 
+git add
+git commit -m "did this shit"
+
+
+git rebase <branch> :: appending change from one branch to another 
+git rebase == history of project would look cleaner
+           == git log output would look like we made all of the changes in order to the master branch
+	   == shows something a falsified record, rebase ONLY WHAT YOU HAVE WORKED ON, NOT WITH 
+	      COMMITS OUTSIDE YOUR REPOSITORY
+
+git revert HEAD --reverts to previous commit
+git log --online... shows commit outputs in list
+git revert HEAD~2 ... head 0 1 2 down 
+
+git diff diff gitdiff
+git diff ::: shows what changes have been applied between commits
+ 
+
+
+
