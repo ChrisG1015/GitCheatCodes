@@ -84,6 +84,9 @@ git revert HEAD~2 ... head 0 1 2 down
 git diff diff gitdiff
 git diff ::: shows what changes have been applied between commits
  
-
+git log --pretty=format:"%h %an %ar - %s"
+##### OUTPUTS 
+b683fdb Scrapbook Git Tutorial 4 minutes ago - bag secured
+41a0d0e Scrapbook Git Tutorial 7 minutes ago - Initial Commit
 
 
